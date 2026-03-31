@@ -12,6 +12,11 @@
       scroll-behavior: smooth;
     }
   </style>
+  <script>
+function toggleMode() {
+  document.body.classList.toggle("light");
+}
+</script>
 </head>
 
 <body>
@@ -23,15 +28,22 @@
     <a href="#skills">Skills</a>
     <a href="#projects">Projects</a>
     <a href="#contact">Contact</a>
+    <button onclick="toggleMode()">
+  <img src="Resources/toggle.jpg" class="toggle-icon">
+</button>
   </div>
   
   <!-- INTRO -->
    
  <section id="about:">
+
     <h1 class="welcome">My Warmest Gratitude.</h1>
     <div class="profile-header">
         <img src="Resources/sady.jpeg" alt="Imran Salehin Sady" class="image_intro">
         <div class="bio-text">
+          <div class="card-container">
+            
+          </div>
             <h2>About</h2>
             <p>
                 I am <b class="bold_name">Imran Salehin Sady</b>, a final-year Computer Science & Engineering student at 

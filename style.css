@@ -232,3 +232,33 @@ h3{
   width: 85px;
   margin-left: 20px;
 }
+
+:root {
+  --bg: #0f172a;
+  --text: #ffffff;
+}
+
+.light {
+  --bg: #393232;
+  --text: rgb(255, 255, 255);
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+}
+/*Sun/moon mode*/
+.toggle-icon{
+  height: 50px;
+  width: 50px;
+  background-color: transparent;
+  margin-left:-4px;
+  margin-bottom: 50px;
+  margin-right: 60px;
+  margin-top: -9px;
+}
+button{
+  background-color: transparent;
+  height: 30px;
+  width: 30px;
+}
