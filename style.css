@@ -250,3 +250,42 @@ img {
     max-width: 100%;
     height: auto;
 }
+
+/* Intro Section Fix */
+#about\: { /* Backslash use করা হয়েছে কারণ আইডিতে ক্লোন (:) আছে */
+  padding-top: 120px; /* নেভিবারের নিচে জায়গা রাখার জন্য */
+  text-align: center;
+}
+
+.profile-header {
+  display: flex;
+  flex-direction: column; /* মোবাইলে একটার নিচে একটা থাকবে */
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.image_intro {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 50%; /* গোল করলে প্রফেশনাল লাগে */
+  border: 4px solid cyan;
+  margin: 0 auto 20px auto; /* ছবি মাঝখানে থাকবে */
+  display: block;
+}
+
+.bio-text {
+  width: 100%;
+  padding: 0 10px;
+}
+
+/* My Warmest Gratitude Text Fix */
+.welcome {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 30px;
+  width: 100%;
+}
