@@ -5,23 +5,34 @@
   box-sizing: border-box;
 }
 
-h1,h2,p{
-    margin: 0;
-    padding: 0;
+:root {
+  --bg: #0f172a;
+  --text: #ffffff;
+  --card-bg: #1e293b;
+  --card-hover: #334155;
+  --accent: cyan;
 }
 
-/* BODY */
+.light {
+  --bg: #f1f5f9;
+  --text: #0f172a;
+  --card-bg: #ffffff;
+  --card-hover: #e2e8f0;
+  --accent: #0ea5e9;
+}
+
 body {
-  font-family: Arial, sans-serif;
-  background-color: #0f172a;
-  color: white;
-  line-height: 1.5;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  transition: background 0.3s, color 0.3s;
 }
 
 /* NAVBAR */
 #navbar {
-  height: 65px;
-  background-color: black;
+  height: 70px;
+  background-color: rgba(0, 0, 0, 0.9);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -29,30 +40,18 @@ body {
   top: 0;
   width: 100%;
   z-index: 1000;
+  padding: 0 20px;
 }
-.color_skill{
-    color: rgb(16, 171, 214);
-}
-/* NAV LINKS */
+
 #navbar a {
   color: rgb(7, 255, 255);
   text-decoration: none;
-  margin: 0 25px;
+  margin: 0 15px;
   font-weight: bold;
   transition: 0.3s;
+  font-size: 15px;
 }
 
-#navbar a:hover {
-  font-size: 18px;
-  color: white;
-}
-
-.tech_color{
-    color: cornflowerblue;
-}
-.tech_color1{
-    color: aquamarine;
-}
 #navbar a:hover {
   color: white;
   transform: scale(1.1);
@@ -60,257 +59,194 @@ body {
 
 /* SECTIONS */
 section {
-  padding: 50px 40px;
-  max-width: 1000px;
-
+  padding: 100px 20px 60px; /* Top padding added for navbar */
+  max-width: 1100px;
+  margin: 0 auto;
 }
 
-/*Upscale image*/
-.image_intro{
-  height: 350px;
-  width: 400px;
-  border-radius: 50px;
+/* INTRO SECTION */
+.profile-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap; /* Responsive: moves text below image on mobile */
+  gap: 40px;
+  text-align: left;
 }
 
-/* INTRO IMAGE */
-img {
-  margin-top: 15px;
-  border-radius: 25px;
-  
+.image_intro {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 30px;
+  border: 4px solid var(--accent);
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
 }
 
-/* NAME STYLE */
+.bio-text {
+  flex: 1;
+  min-width: 300px;
+}
+
 .bold_name {
-  color: cyan;
+  color: var(--accent);
+  font-size: 1.2em;
 }
 
 /* HEADINGS */
-h1, h2 {
-  margin-bottom: 15px;
+h1.welcome {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
 }
 
-/* PROJECT CARDS */
-.card {
-  background: #1e293b;
-  padding: 20px;
-  margin-top: 15px;
-  border-radius: 12px;
-  transition: 0.3s;
-}
-
-.card:hover {
-  transform: translateY(-5px);
-  background: #334155;
-}
-
-/* SMOOTH TEXT SPACING */
-p {
-  margin-bottom: 10px;
-}
-
-img {
-  width: 180px;
-  height: 180px;
-  object-fit: cover;
-  border-radius: 50%;
-  margin-top: 15px;
-  border: 3px solid cyan;
-  box-shadow: 0 0 25px aqua;
-  margin-left:500px;
-  
-
-}
 h2 {
-  margin-top: 20px;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
+  border-bottom: 2px solid var(--accent);
+  display: inline-block;
+  padding-bottom: 5px;
 }
 
-p {
-  margin-bottom: 10px;
-}
-
-h3{
-    margin-top: 30px;
-}
-
-.Lasr{
-    color: aquamarine;
-    text-align: right;
-    margin-top: 20px;
-
-
-}
-.right_image{
-    float:right;
-    width:200px;
-    height:210px;
-    margin-left: 30px;
-    border-radius: 40%;
-    margin-bottom:20px;
-}
-
-.welcome{
-  text-align: left;
-  margin-top: 30px;
-}
-
-/*For skill card */
-/* Cards guloke pashapashi anar jonno */
+/* CARDS & GRID */
 .card-container {
-  display: flex;
-  flex-wrap: wrap;       
-  gap: 20px;          
-  justify-content: flex-start; 
-  margin-top: 20px;
-}
-
-/* Apnar existing card style (shudhu width thik koren) */
-.card1 {
-  background: #1e293b;
-  padding: 20px;
-  border-radius: 12px;
-  transition: 0.3s;
-  width: 290px;        
-  color: white;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-}
-
-.card1:hover {
-  transform: translateY(-5px);
-  background: #334155;
-}
-
-
-.icon {
-  margin-bottom: 10px;
-  border-radius: 5px;
-}
-
-
-.card2{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  margin-top: 25px;
   
-  background: #1e293b;
-  padding: 20px;
-  margin-top: 20px;
-  border-radius: 14px;
-  transition: 0.3s;
-  width: 250px;
 }
 
-.git{
-  height: 80px;
-  width: 100px;
-  margin-left: 80px;
-  margin-bottom: 50px;
-  margin-top: 10px;
+.card, .card1, .card2 {
+  background: var(--card-bg);
+  padding: 25px;
+  border-radius: 15px;
+  transition: 0.3s ease;
+  height: 100%;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
 
-.card2:hover {
-  transform: translateY(-5px);
-  background: #334155;
-}
-
-.icon {
-  width: 125px;
-  height: 125px;
-  vertical-align: center;
-  margin-left: 50px;
-
-}
-.icon:hover{
+.card:hover, .card1:hover, .card2:hover {
   transform: translateY(-8px);
-  background: #334155;
-}
-.fb{
-  height:85px;
-  width: 85px;
-  margin-left: 20px;
+  background: var(--card-hover);
 }
 
-.gmail{
-  height: 85px;
-  width: 85px;
-  margin-left: 20px;
+/* SKILLS SPECIFIC */
+.color_skill { color: #10abd6; }
+.tech_color { color: cornflowerblue; }
+.tech_color1 { color: aquamarine; }
+
+ul {
+  list-style: none;
 }
 
-:root {
-  --bg: #0f172a;
-  --text: #ffffff;
+ul li {
+  padding: 5px 0;
+  position: relative;
+  padding-left: 20px;
 }
 
-.light {
-  --bg: #393232;
-  --text: rgb(255, 255, 255);
+ul li::before {
+  content: "▹";
+  position: absolute;
+  left: 0;
+  color: var(--accent);
 }
 
-body {
-  background: var(--bg);
-  color: var(--text);
-}
-/*Sun/moon mode*/
-.toggle-icon{
-  height: 50px;
-  width: 50px;
-  background-color: transparent;
-  margin-left:-4px;
-  margin-bottom: 50px;
-  margin-right: 60px;
-  margin-top: -9px;
-}
-button{
-  background-color: transparent;
-  height: 30px;
-  width: 30px;
+/* EDUCATION ICONS */
+.icon {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  margin-bottom: 15px;
+  border: none;
+  box-shadow: none;
+  border-radius: 0;
 }
 
-/* MOBILE RESPONSIVE */
+/* CONTACT SECTION */
+#contact {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.git, .fb, .gmail {
+  width: 60px;
+  height: 60px;
+  margin: 10px;
+  transition: 0.3s;
+  border-radius: 10px;
+  border: none;
+  box-shadow: none;
+}
+
+.git:hover, .fb:hover, .gmail:hover {
+  transform: rotate(10deg) scale(1.1);
+}
+
+/* LAST SECTION */
+#last {
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.right_image {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  margin-bottom: 20px;
+  border: 5px solid var(--accent);
+}
+
+.Lasr {
+  color: var(--accent);
+}
+
+/* DARK/LIGHT TOGGLE BUTTON */
+button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+}
+
+.toggle-icon {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  border: 1px solid white;
+}
+
+/* RESPONSIVE BREAKPOINTS */
 @media (max-width: 768px) {
-
   #navbar {
-    flex-wrap: wrap;
-    height: auto;
     padding: 10px;
   }
-
+  
   #navbar a {
-    margin: 10px;
-    font-size: 14px;
+    margin: 0 8px;
+    font-size: 13px;
   }
 
   .profile-header {
+    text-align: center;
     flex-direction: column;
+  }
+
+  h1.welcome {
+    font-size: 1.8rem;
     text-align: center;
   }
 
   .image_intro {
-    width: 180px;
+    width: 220px;
+    height: 220px;
   }
-
-  .card-container {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .card1, .card2 {
-    width: 90%;
-  }
-
-  section {
-    padding: 30px 15px;
-  }
-
-  .right_image {
-    float: none;
-    display: block;
-    margin: 0 auto;
-  }
-
-}
-#navbar {
-  flex-wrap: wrap;
 }
 
-section {
-  max-width: 1000px;
-  margin: auto;
+/* Fix for standard images not to have huge margins */
+img {
+    max-width: 100%;
+    height: auto;
 }
